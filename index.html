@@ -1,0 +1,136 @@
+<html lang="en" data-lt-installed="true"><head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Conformy - PHP Ajax Modern Contact Form">
+    <meta name="keywords" content="php,ajax,contact form,ajax validate form,php contact form">
+    <meta name="author" content="Yucel Yilmaz">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--// Required Css Files //-->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/font_awesome/css/all.css">
+    <link rel="stylesheet" href="assets/fonts/fonts/font.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--// Theme Color Css //-->
+    <link rel="stylesheet" href="assets/css/skins/default-color.css" id="theme-color-toggle">
+    <title>Conformy - PHP Ajax Modern Contact Form</title>
+</head>
+<body class="light-mode vsc-initialized">
+
+    <main class="main-area">
+
+        <!--// Contact Section Start //-->
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="section-heading">
+                            <h2 class="section-title">Contact Form</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-start justify-content-center">
+                    <div class="col-md-10">
+                        <div class="contact-form-wrap">
+                            <div class="empty-form text-center" style="display: none;"><span>Please Fill Required Fields</span></div>
+                            <div class="terms-alert text-center" style="display: none;"><span>Please Accept The Terms</span></div>
+                            <div class="subject-alert text-center" style="display: none;"><span>Please Select Subject</span></div>
+                            <div class="security-alert text-center" style="display: none;"><span>Security code does not match !</span></div>
+                            <div class="email-invalid text-center" style="display: none;"><span>Please enter a valid email address.Exp. example@gmail.com</span></div>
+                            <div class="phone-invalid text-center" style="display: none;"><span>Please enter a valid phone number.Exp. 200-255-4444</span></div>
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="contact-form-group">
+                                            <input type="text" class="form-control" name="contact_name" autocomplete="off" placeholder="Your Name *">
+                                            <i class="far fa-user"></i>
+                                            <div class="form-validate-icons">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="contact-form-group">
+                                            <input type="text" class="form-control" name="contact_phone" autocomplete="off" placeholder="Phone Exp. 05555555555 *">
+                                            <i class="fas fa-phone-volume"></i>
+                                            <div class="form-validate-icons">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="contact-form-group">
+                                            <input type="text" class="form-control" name="contact_email" autocomplete="off" placeholder="Your Email *">
+                                            <i class="far fa-envelope"></i>
+                                            <div class="form-validate-icons">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="contact-form-group custom-select-wrapper">
+                                            <select name="contact_subject" class="form-control">
+                                                <option value="Please Select">Please Select</option>
+                                                <option value="Sales" data-fa-icon="fa fa-arrow-up">Sales</option>
+                                                <option value="Services" data-fa-icon="fa fa-phone">Services</option>
+                                                <option value="Accounting" data-fa-icon="fa fa-volume">Accounting</option>
+                                            </select>
+                                            <i class="far fa-bookmark"></i>
+                                        <div class="select-selected">Please Select</div><div class="select-items select-hide"><div>Sales</div><div>Services</div><div>Accounting</div></div></div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-form-group">
+                                            <textarea name="contact_message" class="form-control" autocomplete="off" placeholder="Your Message *" cols="20" rows="7"></textarea>
+                                            <i class="far fa-envelope-open"></i>
+                                            <div class="form-validate-icons">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="contact-form-group">
+                                            <input type="text" class="form-control" name="contact_question" id="txtInput" autocomplete="off" placeholder="Please Enter Code *">
+                                            <span id="txtCaptchaSpan" class="error">79142</span>
+                                            <input type="hidden" id="txtCaptcha" value="79142">
+                                            <div class="form-validate-icons">
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-form-group">
+                                            <div class="custom-control custom-checkbox d-flex align-items-center">
+                                                <input type="checkbox" class="custom-control-input" name="contact_terms" id="termsCheckBox">
+                                                <label class="custom-control-label" for="termsCheckBox"></label>
+                                                <span>I accepted <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" id="termssToggle">Terms &amp; Conditions</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-btn-left">
+                                            <button type="submit" id="contactBtn" class="default-button">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--// Contact Section End //-->
+
+        <!--// Footer Start //-->
+        <footer class="footer">
+            <div class="copyright-wrap">
+                <div class="container">
+                    <div class="copyright-inner">
+                        <p class="copyright-text">© Copyright.<span id="fullYearCopyright" data-copyright="true">2022</span> Design with By AipThemes</p>
+                    </div>
+                </div>
+                <!--// .container //-->
+            </div>
+        </footer>
+        <!--// Footer End //-->
+    </main>
+
+</body></html>
